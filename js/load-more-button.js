@@ -1,10 +1,10 @@
 $( document ).ready(function (){
-  $(".load").slice(0, 4).show();
+  var itemsToShow = 6;
+  $(".load").slice(0, itemsToShow).show();
   $(".btn-load-more").on('click', function (e) {
       e.preventDefault();
-      $(".load").slice(0, 12).show();
-    
-      // $(".load").slice(0, 8).show();
+      var hiddenItems = $(".load:hidden");
+      hiddenItems.slice(0, itemsToShow).show();
       if($(".load:hidden").length == 0){
          $(".btn-load-more").fadeOut('slow');
       }
